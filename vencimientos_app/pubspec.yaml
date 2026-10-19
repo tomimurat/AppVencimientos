@@ -1,0 +1,46 @@
+name: vencimientos
+description: App de seguimiento de vencimientos con escaneo por cámara.
+publish_to: 'none'
+version: 1.0.0+1
+ 
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.29.0"   # requerido por mobile_scanner 7.x
+ 
+dependencies:
+  flutter:
+    sdk: flutter
+ 
+  # --- Escaneo por cámara (verificado: 7.2.0 al jun-2026) ---
+  mobile_scanner: ^7.2.0
+ 
+  # --- Persistencia local ---
+  sqflite: ^2.3.3
+  path: ^1.9.0
+ 
+  # --- Notificaciones locales (v17+: API zonedSchedule/TZDateTime) ---
+  flutter_local_notifications: ^17.2.0
+  timezone: ^0.9.4
+ 
+  # --- UI ---
+  google_fonts: ^6.2.1
+
+  # --- Importación de catálogo desde CSV (liviano, aguanta 10k+ filas) ---
+  csv: ^5.1.1
+ 
+  # (Opcional, para importar el catálogo desde Excel como en tu app original)
+  excel: ^4.0.6
+ 
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
+ 
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/catalogo.csv
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/logo.png"
